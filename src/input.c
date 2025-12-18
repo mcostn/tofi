@@ -349,6 +349,9 @@ void select_previous_result(struct tofi *tofi)
 	} else if (entry->first_result > 0) {
 		entry->selection = entry->first_result - 1;
 		entry->first_result = 0;
+	} else {
+		entry->selection = entry->num_results_drawn - 1;
+		entry->first_result = entry->results.count - entry->num_results_drawn;
 	}
 }
 
